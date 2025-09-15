@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>myMasteryLab - Personalized 1:1 Learning for Mastery, Confidence & Joy</title>
+  <meta name="description" content="myMasteryLab provides personalized 1:1 learning with AI intelligence and human mentorship for homeschoolers, microschoolers, and independent learners.">
+  <meta name="keywords" content="personalized learning, 1:1 tutoring, homeschool learning, microschool learning, AI learning platform, coding for kids, math tutoring, myMasteryLab">
+  <meta name="author" content="myMasteryLab">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mymasterylab.com/">
+
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                        accent: '#10B981',
+                        light: '#F9FAFB',
+                        dark: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(120deg, #4F46E5 0%, #7C3AED 100%);
+        }
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        .program-pill {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.1);
+            color: #4F46E5;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center">
+                <img src="logo.webp" alt="Logo" class=" w-auto" style="height:9rem;" alt="Best online tutoring in india"> 
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary">About</a>
+                    <a href="#math" class="text-gray-600 hover:text-primary">Math Program</a>
+                    <a href="#coding" class="text-gray-600 hover:text-primary">Coding & Tech</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary">Testimonials</a>
+                    <a href="" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-colors">Free Trial</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-primary">About</a>
+                <a href="#math" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-primary">Math Program</a>
+                <a href="#coding" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-primary">Coding & Tech</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-primary">Testimonials</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white hover:bg-secondary">Free Trial</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 pb-16 md:pt-32 md:pb-24 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">Personalized 1:1 Learning for Mastery, Confidence & Joy</h1>
+                    <p class="text-xl mt-4 mb-8">Designed for homeschoolers, microschoolers, and independent learners. AI-powered adaptive learning with human mentorship.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+  <button id="openModal" 
+    class="bg-white text-primary px-6 py-3 rounded-md font-semibold text-center hover:bg-gray-100 transition-colors">
+    Start Free Trial
+  </button>
+  <a href="#math" 
+    class="border border-white text-white px-6 py-3 rounded-md font-semibold text-center hover:bg-white hover:text-primary transition-colors">
+    Explore Programs
+  </a>
+</div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="7915189_3784896.jpg" alt="Child learning with tablet" class="rounded-lg shadow-xl w-full max-w-md" alt="mymasterylab">
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Modal -->
+<div id="trialModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative transform scale-95 opacity-0 transition-all duration-300 ease-out" id="modalContent">
+    <!-- Close Button -->
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    
+    <h2 class="text-2xl font-bold mb-4 text-center text-gray-800 animate-fade-in">Start Free Trial</h2>
+    <p class="text-center text-gray-500 mb-4 italic">Not your regular boring class… Promise!</p>
+    <form id="trialForm" class="space-y-4">
+      <input type="text" name="name" placeholder="Full Name" required 
+        class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-primary focus:outline-none transition duration-300 ease-in-out transform focus:scale-[1.02]">
+      
+      <input type="email" name="email" placeholder="Email Address" required 
+        class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-primary focus:outline-none transition duration-300 ease-in-out transform focus:scale-[1.02]">
+      
+      <input type="tel" name="phone" placeholder="Phone Number" required 
+        class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-primary focus:outline-none transition duration-300 ease-in-out transform focus:scale-[1.02]">
+      
+      <input type="number" name="age" placeholder="Age" min="5" required 
+        class="w-full border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-primary focus:outline-none transition duration-300 ease-in-out transform focus:scale-[1.02]">
+      
+      <button type="submit" 
+        class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-secondary transition-all duration-300 transform hover:scale-[1.03]">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Animations -->
+<style>
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+</style>
+
+<!-- Script -->
+<script>
+    const openModal = document.getElementById("openModal");
+    const openModalTestimonial = document.getElementById("openModalTestimonial");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("trialModal");
+    const modalContent = document.getElementById("modalContent");
+
+    function showTrialModal() {
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+            modalContent.classList.remove("opacity-0", "scale-95");
+            modalContent.classList.add("opacity-100", "scale-100");
+        }, 10);
+    }
+
+    if (openModal) openModal.addEventListener("click", showTrialModal);
+    if (openModalTestimonial) openModalTestimonial.addEventListener("click", showTrialModal);
+
+    closeModal.addEventListener("click", () => {
+        modalContent.classList.add("opacity-0", "scale-95");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+        }, 300);
+    });
+
+    // Close on background click
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modalContent.classList.add("opacity-0", "scale-95");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 300);
+        }
+    });
+</script>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">Welcome to myMasteryLab</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Education should be personalized, purposeful, and joyful.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">The Future of Learning for Homeschoolers & Microschoolers</h3>
+                    <p class="text-gray-600 mb-4">We provide <span class="font-semibold text-primary">1:1 instruction</span> with a unique blend of <span class="font-semibold text-primary">AI intelligence</span> and <span class="font-semibold text-primary">human mentorship</span> to help each learner achieve true mastery, build confidence, and find fun in every subject.</p>
+                    <p class="text-gray-600">Whether your child is just starting Kindergarten or preparing for high school, our programs are built around flexibility, engagement, and real-world relevance.</p>
+                </div>
+                <div class="bg-light p-8 rounded-lg shadow-sm">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-primary text-4xl mb-4">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h4 class="font-semibold">1:1 Personalized Learning</h4>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-primary text-4xl mb-4">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4 class="font-semibold">AI-Powered Adaptive Learning</h4>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-primary text-4xl mb-4">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="font-semibold">Mastery-Based Progression</h4>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-primary text-4xl mb-4">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <h4 class="font-semibold">Joyful Learning Experience</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Math Program Section -->
+    <section id="math" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">Our Math Program: Mastery Through 1:1 Personalized Learning</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">We don't just help students keep up — we help them master math with clarity, purpose, and excitement.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Why Math?</h3>
+                    <p class="text-gray-600">Because math is the foundation for logic, problem-solving, and future-ready thinking. Our program is aligned with the US Common Core Math Curriculum (K-8), ensuring your child stays ahead or catches up at the right pace.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="10289167_4409324.jpg" alt="Math illustration" class="w-full h-64 object-contain" alt="mymastery">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">1:1 Live Sessions</h3>
+                    <p class="text-gray-600">Your child works directly with a dedicated mentor. Our adaptive AI recommends tailored content, while live instructors provide meaningful instruction.</p>
+                </div>
+                
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Mastery-Based Progression</h3>
+                    <p class="text-gray-600">We don't move on until a concept is truly understood. This closes learning gaps and builds confidence—one step at a time.</p>
+                </div>
+                
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">The Fun Hour</h3>
+                    <p class="text-gray-600">Each week includes a dedicated fun session where math is explored through games, puzzles, and real-world scenarios.</p>
+                </div>
+                
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Real-Life Application</h3>
+                    <p class="text-gray-600">From cooking recipes to designing floor plans, our students learn how math connects with their everyday world.</p>
+                </div>
+                
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Transparent Progress Reports</h3>
+                    <p class="text-gray-600">Parents receive regular updates and detailed feedback so you're always in the loop and can celebrate each milestone.</p>
+                </div>
+                
+                <div class="bg-white subject-card p-6 rounded-lg shadow-sm transition-all duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Flexible Scheduling</h3>
+                    <p class="text-gray-600">Choose the days and times that fit your family's routine. We adapt to your homeschooling schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding & Tech Section -->
+    <section id="coding" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">Coding & Tech: Building Digital Creators at Every Age</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">While math is our anchor, we offer a robust coding and technology track—organized by age and skill level.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-light p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Young Explorers (Grades K-3)</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Scratch Jr & Scratch</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Story-Based Coding Games</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <span class="program-pill">Drag & Drop Coding</span>
+                        <span class="program-pill">Logic Basics</span>
+                    </div>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Junior Coders (Grades 4-6)</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Roblox Game Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Intro to Python</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Beginner Robotics</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <span class="program-pill">Lua Scripting</span>
+                        <span class="program-pill">Python Basics</span>
+                    </div>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-center">Middle School Creators (Grades 6-8)</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Python + JavaScript Projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>AI & Machine Learning Concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Web Design (HTML/CSS)</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <span class="program-pill">Web Development</span>
+                        <span class="program-pill">AI Exploration</span>
+                    </div>
+                </div>
+                
+                <div class="bg-light p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 text-center">High School Innovators (Grades 9-11)</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Full Stack Web Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>React Native App Building</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>AR/VR Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Advanced AI & Machine Learning</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <span class="program-pill">Advanced</span>
+                        <span class="program-pill">Career-Focused</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-6">All coding sessions are project-based and taught live in small groups or 1:1, with pathways for beginners and advanced learners.</p>
+                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-secondary transition-colors">Explore Coding Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Homeschool Focus Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Built for Homeschool & Microschool Success</h2>
+                <p class="text-xl mt-4 max-w-3xl mx-auto">We understand the homeschooling lifestyle—flexible, values-driven, and deeply personal.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+                    <p class="mb-6">To transform independent learners into <span class="font-semibold">confident problem-solvers</span>, <span class="font-semibold">critical thinkers</span>, and <span class="font-semibold">joyful creators</span>—by making mastery not just possible, but exciting.</p>
+                    
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h4 class="text-xl font-semibold mb-4">We Support Your Homeschool Journey With:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>Customizable schedules that fit your family's rhythm</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>Detailed learning insights and progress tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>1:1 mentorship from expert educators</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                <span>Engaging, mastery-focused learning in core and future-ready subjects</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Experience Education That's:</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-white bg-opacity-5 rounded-lg">
+                            <i class="fas fa-calendar-alt text-4xl mb-4"></i>
+                            <h4 class="font-semibold">Flexible</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white bg-opacity-5 rounded-lg">
+                            <i class="fas fa-bullseye text-4xl mb-4"></i>
+                            <h4 class="font-semibold">Focused</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white bg-opacity-5 rounded-lg">
+                            <i class="fas fa-smile text-4xl mb-4"></i>
+                            <h4 class="font-semibold">Fun</h4>
+                        </div>
+                        <div class="text-center p-4 bg-white bg-opacity-5 rounded-lg">
+                            <i class="fas fa-rocket text-4xl mb-4"></i>
+                            <h4 class="font-semibold">Future-Ready</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">What Homeschool Families Say</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Hear from parents and students who have experienced the myMasteryLab difference.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The 1:1 attention has completely transformed my daughter's relationship with math. She's now confident and actually looks forward to her sessions!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">MJ</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Maria J.</h4>
+                            <p class="text-gray-500 text-sm">Homeschool Parent</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The coding program is incredible! My son went from playing Roblox to creating his own games. The project-based approach keeps him engaged and learning."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">DR</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">David R.</h4>
+                            <p class="text-gray-500 text-sm">Microschool Leader</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"As a homeschooling parent, I appreciate the detailed progress reports and the flexibility to schedule sessions around our life. It's truly personalized education."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold">SL</div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sarah L.</h4>
+                            <p class="text-gray-500 text-sm">Homeschool Parent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button type="button" id="openModalTestimonial" class="inline-block bg-primary text-white px-6 py-3 rounded-md font-semibold hover:bg-secondary transition-colors">Start Your Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-graduation-cap mr-2"></i>myMasteryLab</h3>
+                    <p class="text-gray-400">Personalized 1:1 learning for mastery, confidence & joy across every subject.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#math" class="text-gray-400 hover:text-white">Math Program</a></li>
+                        <li><a href="#coding" class="text-gray-400 hover:text-white">Coding & Tech</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">All Subjects</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Free Trial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">For Homeschoolers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">For Microschools</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-gray-400">Subscribe to our newsletter</p>
+                    <div class="mt-2 flex">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l-md focus:outline-none w-full">
+                        <button class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-secondary transition-colors">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 myMasteryLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
